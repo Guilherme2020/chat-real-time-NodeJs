@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> WebSocket Chat  </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+
+    <link rel="stylesheet" type="" href="style.css">
+
+</head>
+<body>
+    
+    <form id="chat">
+        <input type="text" name="username" placeholder="Digite Seu usuário">
+        <div class="messages"> </div>
+        <input type="text" name="message" placeholder="Digite Sua Menssagem">
+        <button type="submit">Enviar</button>
+    </form>
+
+
+    <script type="text/javascript">
+        var socket = io('http://localhost:3000');
+       
+        function renderMessage(message){
+
+            $('.messages').append('<div class="messages"> <strong>'+message.author+'</strong>:'+message.message+'</div>')
+
+        }
+       
+        $('#chat').submit(function(event){
+            event.preventDefault();
+            var author = $('input[name=username]').val();
+            var message = $('input[name=message]').val();
+
+            if(author.length && message.length ){
+                var messageObject = {
+                    author:author,
+                    message: message                    
+                };
+            }
+            renderMessage(messageObject); 
+            
+            socket.emit('sendMessage',messageObject); 
+        })
+        
+
+
+    </script>
+
+</body>
+</html>

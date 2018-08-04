@@ -1,0 +1,32 @@
+Arguments: 
+  /usr/local/bin/node /usr/share/yarn/bin/yarn.js add ejs
+
+PATH: 
+  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/usr/lib/jvm/kotlinc/bin:/home/guilherme/Android/Sdk/platform-tools:/home/guilherme/Android/Sdk/tools:/home/guilherme/Android/Sdk/tools/bin:/home/guilherme/Downloads/gradle-4.5/bin
+
+Yarn version: 
+  1.0.1
+
+Node version: 
+  8.4.0
+
+Platform: 
+  linux x64
+
+npm manifest: 
+  
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  SyntaxError: /home/guilherme/Documentos/chat/package.json: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at /usr/share/yarn/lib/cli.js:797:57
+      at Generator.next (<anonymous>)
+      at step (/usr/share/yarn/lib/cli.js:92:30)
+      at /usr/share/yarn/lib/cli.js:103:13
+      at <anonymous>
